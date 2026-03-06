@@ -1,0 +1,10 @@
+<svg width="640" height="176" viewBox="0 0 640 176" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Logotipo Birô Principia</title>
+  <desc id="desc">Marca estilizada com símbolo geométrico e tipografia colorida.</desc>
+  <rect width="640" height="176" rx="24" fill="transparent"/>
+  <circle cx="56" cy="84" r="30" fill="#C21F2F"/>
+  <path d="M56 46L74 110H38L56 46Z" fill="#DADDE5"/>
+  <path d="M96 84H132" stroke="#1458C4" stroke-width="6" stroke-linecap="round"/>
+  <text x="150" y="82" font-size="64" font-family="Georgia, serif" fill="#C21F2F">Birô</text>
+  <text x="150" y="146" font-size="72" font-family="Georgia, serif" fill="#1458C4">Principia</text>
+</svg>
