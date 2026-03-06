@@ -9,7 +9,7 @@ const organizationSchema = {
   name: 'Birô Principia',
   description: 'Birô editorial focado em material didático, diagramação e revisão técnica.',
   url: 'https://www.exemplo.com.br',
-  logo: 'https://www.exemplo.com.br/logo-biro-principia.svg',
+  logo: 'https://www.exemplo.com.br/logo_principia.png',
 };
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <header className="header">
         <div className="container nav">
           <a href="#inicio" className="brand" aria-label="Página inicial Birô Principia">
-            <Image src="/logo-biro-principia.svg" alt="Logotipo Birô Principia" width={220} height={68} priority />
+            <Image src="/logo_principia.png" alt="Logotipo Birô Principia" width={220} height={68} priority />
           </a>
 
           <nav aria-label="Navegação principal">
