@@ -89,7 +89,7 @@ export default function Home() {
       <section id="quem-somos" className="sectionLight">
         <div className="container">
           <SectionTitle
-            title="Quem Somos"
+            title="Quem somos"
             subtitle="Profissionais com formação pela USP e trajetória consolidada na produção editorial de materiais didáticos."
           />
 

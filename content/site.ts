@@ -27,7 +27,7 @@ export type TeamMember = {
 
 export const navItems = [
   { label: 'Início', href: '#inicio' },
-  { label: 'Quem Somos', href: '#quem-somos' },
+  { label: 'Quem somos', href: '#quem-somos' },
   { label: 'Serviços', href: '#servicos' },
   { label: 'Contato', href: '#contato' },
 ];
