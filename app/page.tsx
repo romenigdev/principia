@@ -169,7 +169,6 @@ export default function Home() {
 
       <footer className="footer">
         <div className="container footerWrap">
-          <Image src="/logo_com_branco.png" alt="Logotipo Birô Principia" width={140} height={42} />
           <p>© {new Date().getFullYear()} Birô Principia. Todos os direitos reservados.</p>
         </div>
       </footer>
