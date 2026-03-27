@@ -35,15 +35,15 @@ export const navItems = [
 export const teamMembers: TeamMember[] = [
   {
     name: 'Romenig da Silva Ribeiro',
-    role: 'Editor e Especialista em Matemática e Computação',
-    credentials: 'Licenciado em Matemática e Mestre em Ciência da Computação pelo Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).',
+    role: 'Matemática e Computação',
+    credentials: 'Licenciado em Matemática e Mestre em Ciência da Computação pelo IME-USP. Atua na elaboração e revisão de materiais didáticos de Matemática e Computação para a educação básica, com ênfase em pensamento computacional e programação.',
     areas: ['Matemática', 'Computação', 'Pensamento Computacional'],
   },
   {
     name: 'Rodrigo Uchida Ichikawa',
-    role: 'Editor e Especialista em Ciências da Natureza',
-    credentials: 'Bacharel em Física e Pós-doutor em Física pelo Instituto de Pesquisas Energéticas e Nucleares da Universidade de São Paulo (IPEN/USP).',
-    areas: ['Física', 'Química', 'Biologia', 'Ciências da Natureza'],
+    role: 'Ciências da Natureza',
+    credentials: 'Bacharel em Física e Pós-doutor pelo IPEN-USP. Atua na elaboração e revisão técnica de materiais didáticos de Física, Química e Biologia, com experiência em pesquisa aplicada e divulgação científica.',
+    areas: ['Física', 'Química', 'Biologia'],
   },
 ];
 
@@ -56,44 +56,44 @@ export const services: Service[] = [
   {
     title: 'Revisão Técnica',
     description:
-      'Verificação rigorosa de conteúdo científico e pedagógico, garantindo precisão conceitual e adequação à BNCC.',
-    bullets: ['Análise de precisão conceitual', 'Conformidade com a BNCC', 'Consistência terminológica'],
+      'Análise do conteúdo científico por especialistas da área, verificando a precisão de conceitos, dados, fórmulas e nomenclatura.',
+    bullets: ['Verificação de precisão conceitual', 'Adequação à BNCC e aos PCNs', 'Parecer técnico fundamentado'],
   },
   {
     title: 'Elaboração de Originais',
     description:
-      'Produção autoral de textos didáticos com linguagem clara, progressão pedagógica e rigor científico.',
-    bullets: ['Textos autorais para livros didáticos', 'Progressão de conteúdo estruturada', 'Adequação ao público-alvo'],
+      'Desenvolvimento autoral de textos didáticos, do planejamento editorial à entrega do manuscrito, com progressão pedagógica e rigor técnico.',
+    bullets: ['Textos autorais para livros e coleções', 'Estruturação de sumário e progressão', 'Adequação de linguagem ao segmento'],
   },
   {
     title: 'Leitura de Provas',
     description:
-      'Conferência final de materiais antes da publicação, assegurando a correção ortográfica, gramatical e de formatação.',
-    bullets: ['Revisão ortográfica e gramatical', 'Verificação de formatação', 'Checklist de qualidade pré-publicação'],
+      'Conferência final do material composto, cotejando provas com os originais para assegurar fidelidade de texto, imagens e formatação.',
+    bullets: ['Cotejo com originais', 'Conferência de emendas e correções', 'Verificação de padrão tipográfico'],
   },
   {
     title: 'Leitura Técnica',
     description:
-      'Análise especializada do conteúdo por profissionais da área, validando conceitos, fórmulas e abordagens didáticas.',
-    bullets: ['Validação de conceitos e fórmulas', 'Análise de abordagem didática', 'Parecer técnico detalhado'],
+      'Avaliação especializada do conteúdo por profissional com formação na disciplina, validando abordagens e adequação ao nível de ensino.',
+    bullets: ['Validação de conceitos e abordagens', 'Análise de adequação ao nível escolar', 'Relatório com apontamentos técnicos'],
   },
   {
     title: 'Leitura Crítica',
     description:
-      'Avaliação aprofundada da coerência, clareza e eficácia pedagógica do material como um todo.',
-    bullets: ['Análise de coerência global', 'Avaliação de clareza expositiva', 'Sugestões de melhoria pedagógica'],
+      'Avaliação editorial do material como um todo — coerência, clareza, encadeamento dos conteúdos e eficácia da proposta pedagógica.',
+    bullets: ['Análise de coerência e encadeamento', 'Avaliação da proposta pedagógica', 'Sugestões de reestruturação e melhoria'],
   },
   {
     title: 'Roteiros de Conteúdo Digital',
     description:
-      'Elaboração de roteiros para objetos educacionais digitais, videoaulas e materiais interativos.',
-    bullets: ['Roteiros para videoaulas', 'Objetos educacionais digitais', 'Materiais interativos para EaD'],
+      'Elaboração de roteiros para objetos educacionais digitais, videoaulas e recursos interativos, com linguagem e estrutura adequadas ao meio.',
+    bullets: ['Roteiros para videoaulas e animações', 'Objetos educacionais digitais (OEDs)', 'Estruturação de trilhas de aprendizagem'],
   },
   {
     title: 'Itens, Rubricas e Avaliações',
     description:
-      'Elaboração de itens com distratores plausíveis, rubricas de avaliação e instrumentos avaliativos alinhados à BNCC.',
-    bullets: ['Itens com distratores fundamentados', 'Rubricas de avaliação por competência', 'Avaliações diagnósticas e formativas'],
+      'Elaboração de itens de avaliação com distratores plausíveis, gabaritos comentados e rubricas por competência, alinhados à BNCC.',
+    bullets: ['Itens objetivos e dissertativos', 'Rubricas e matrizes de avaliação', 'Avaliações diagnósticas e formativas'],
   },
 ];
 

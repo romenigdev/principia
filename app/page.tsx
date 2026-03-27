@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { SectionTitle } from '@/components/SectionTitle';
 import { MobileMenu } from '@/components/MobileMenu';
 import { navItems, services, teamMembers, contactInfo } from '@/content/site';
@@ -9,7 +8,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Birô Principia',
   description:
-    'Birô editorial especializado em revisão técnica, elaboração de originais e serviços editoriais para materiais didáticos de Ciências da Natureza, Matemática e Computação, alinhados à BNCC.',
+    'Birô editorial especializado em materiais didáticos de Ciências da Natureza, Matemática e Computação para a educação básica.',
   url: `https://${contactInfo.domain}`,
   logo: `https://${contactInfo.domain}/logo_principia.png`,
   email: contactInfo.email,
@@ -46,12 +45,12 @@ export default function Home() {
 
       <section id="inicio" className="hero container">
         <div>
-          <span className="eyebrow">Birô editorial especializado em materiais didáticos</span>
-          <h1>Excelência editorial em Ciências da Natureza, Matemática e Computação</h1>
+          <span className="eyebrow">Birô editorial para materiais didáticos</span>
+          <h1>Revisão técnica, elaboração de originais e produção editorial para educação básica</h1>
           <p>
-            Com mais de 10 anos de experiência no mercado editorial educacional, o Birô Principia oferece serviços
-            especializados de revisão técnica, elaboração de originais e produção de conteúdo didático alinhado à BNCC.
-            Nossa equipe reúne formação acadêmica de ponta — do mestrado ao pós-doutorado — pela Universidade de São Paulo.
+            O Birô Principia presta serviços editoriais para editoras e instituições de ensino que desenvolvem materiais
+            didáticos de Ciências da Natureza, Matemática e Computação. Atuamos da concepção dos originais à leitura
+            de provas, com mais de dez anos de experiência no mercado editorial educacional brasileiro.
           </p>
 
           <div className="heroActions">
@@ -61,24 +60,24 @@ export default function Home() {
           </div>
 
           <div className="quickInfo">
-            <span>✓ Alinhamento à BNCC</span>
-            <span>✓ +10 anos de experiência</span>
-            <span>✓ Equipe com pós-doutorado (USP)</span>
+            <span>✓ Conteúdo alinhado à BNCC</span>
+            <span>✓ Mais de 10 anos no mercado editorial</span>
+            <span>✓ Formação acadêmica pela USP</span>
           </div>
         </div>
 
         <aside className="heroCard" aria-label="Áreas de atuação">
           <h2>Áreas de atuação</h2>
           <p>
-            Atuamos em todas as disciplinas de Ciências da Natureza e Exatas para a educação básica,
-            com especialização nas seguintes áreas:
+            Trabalhamos com as disciplinas da área de Ciências da Natureza e Matemática
+            para todos os segmentos da educação básica:
           </p>
           <ul>
-            <li>Física — incluindo abordagens experimentais e conceituais</li>
-            <li>Química — do ensino fundamental ao médio</li>
-            <li>Biologia — ciências da vida e meio ambiente</li>
-            <li>Matemática — do letramento ao pensamento algébrico</li>
-            <li>Computação — pensamento computacional e programação</li>
+            <li>Física</li>
+            <li>Química</li>
+            <li>Biologia</li>
+            <li>Matemática</li>
+            <li>Computação e Pensamento Computacional</li>
           </ul>
         </aside>
       </section>
@@ -86,7 +85,7 @@ export default function Home() {
       <section id="quem-somos" className="section container">
         <SectionTitle
           title="Quem Somos"
-          subtitle="Editores experientes com formação acadêmica pela USP, dedicados à qualidade editorial em materiais didáticos."
+          subtitle="Profissionais com formação pela USP e trajetória consolidada na produção editorial de materiais didáticos."
         />
 
         <div className="teamGrid">
@@ -105,16 +104,16 @@ export default function Home() {
         </div>
 
         <p className="teamSummary">
-          Juntos, combinamos rigor científico e experiência editorial para entregar materiais didáticos que atendem
-          aos mais altos padrões de qualidade. Nossa atuação abrange desde a elaboração de originais até a revisão
-          técnica final, sempre com foco na precisão conceitual e na adequação pedagógica exigida pela BNCC.
+          Reunimos rigor acadêmico e vivência prática no fluxo editorial de grandes editoras. Nossa atuação vai
+          da elaboração de originais à revisão técnica e leitura de provas, sempre com atenção à precisão
+          conceitual e à adequação pedagógica exigidas pela BNCC.
         </p>
       </section>
 
       <section id="servicos" className="section container">
         <SectionTitle
           title="Serviços"
-          subtitle="Soluções editoriais completas para materiais didáticos impressos e digitais, do original à publicação."
+          subtitle="Do original à publicação — serviços editoriais para materiais didáticos impressos e digitais."
         />
 
         <div className="grid gridAuto">
@@ -135,17 +134,17 @@ export default function Home() {
       <section id="contato" className="section container contact">
         <div>
           <SectionTitle
-            title="Contato e orçamento"
-            subtitle="Entre em contato para discutir seu projeto editorial. Respondemos em até 24 horas úteis."
+            title="Contato"
+            subtitle="Envie sua demanda ou solicite um orçamento. Retornamos em até um dia útil."
           />
           <div className="contactCtas">
-            <Link className="btn primary" href={`mailto:${contactInfo.email}`}>
+            <a className="btn primary" href={`mailto:${contactInfo.email}`}>
               {contactInfo.email}
-            </Link>
+            </a>
           </div>
         </div>
 
-        <form className="contactForm" aria-label="Formulário de orçamento">
+        <form className="contactForm" aria-label="Formulário de contato">
           <label htmlFor="name">
             Nome
             <input id="name" type="text" placeholder="Seu nome" />
@@ -156,14 +155,14 @@ export default function Home() {
           </label>
           <label htmlFor="service">
             Serviço de interesse
-            <input id="service" type="text" placeholder="Ex: revisão técnica de apostila" />
+            <input id="service" type="text" placeholder="Ex: revisão técnica, elaboração de originais" />
           </label>
           <label htmlFor="message">
             Mensagem
-            <textarea id="message" rows={4} placeholder="Descreva seu projeto editorial" />
+            <textarea id="message" rows={4} placeholder="Descreva brevemente sua demanda" />
           </label>
-          <button type="button" className="btn primary">
-            Enviar solicitação
+          <button type="submit" className="btn primary">
+            Enviar mensagem
           </button>
         </form>
       </section>
@@ -171,7 +170,7 @@ export default function Home() {
       <footer className="footer">
         <div className="container footerWrap">
           <Image src="/logo_com_branco.png" alt="Logotipo Birô Principia" width={140} height={42} />
-          <p>© {new Date().getFullYear()} Birô Principia. Serviços editoriais especializados em materiais didáticos.</p>
+          <p>© {new Date().getFullYear()} Birô Principia. Todos os direitos reservados.</p>
         </div>
       </footer>
     </main>
