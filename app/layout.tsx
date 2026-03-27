@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     template: '%s | Birô Principia',
   },
   description:
-    'Birô editorial especializado em revisão técnica, elaboração de originais e produção de materiais didáticos de Ciências da Natureza, Matemática e Computação, alinhados à BNCC.',
+    'Birô editorial especializado em revisão técnica, elaboração de originais e leitura de provas para materiais didáticos de Ciências da Natureza, Matemática e Computação.',
   openGraph: {
     title: 'Birô Principia | Serviços Editoriais para Materiais Didáticos',
     description:
-      'Revisão técnica, elaboração de originais e serviços editoriais para materiais didáticos de Ciências e Matemática. Equipe com formação pela USP e mais de 10 anos de experiência.',
+      'Serviços editoriais para materiais didáticos de Ciências da Natureza, Matemática e Computação. Revisão técnica, elaboração de originais e leitura de provas.',
     type: 'website',
     locale: 'pt_BR',
   },
