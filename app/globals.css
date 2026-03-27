@@ -40,7 +40,7 @@ a {
 
 /* Compensar header sticky nos anchor links */
 section[id] {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 90px;
 }
 
 .container {
@@ -68,7 +68,7 @@ section[id] {
 }
 
 .brand img {
-  height: 52px;
+  height: 62px;
   width: auto;
 }
 
@@ -511,22 +511,17 @@ textarea:focus {
 }
 
 .footerWrap {
-  min-height: 80px;
+  min-height: 64px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
   padding: 20px 0;
-}
-
-.footerWrap img {
-  height: 36px;
-  width: auto;
 }
 
 .footerWrap p {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.85rem;
+  text-align: center;
 }
 
 /* ── Responsive ── */
