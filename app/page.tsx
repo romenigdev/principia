@@ -23,7 +23,7 @@ export default function Home() {
       <header className="header">
         <div className="container nav">
           <a href="#inicio" className="brand" aria-label="Página inicial Birô Principia">
-            <Image src="/logo_principia.png" alt="Logotipo Birô Principia" width={220} height={68} priority />
+            <Image src="/logo_com_branco.png" alt="Logotipo Birô Principia" width={160} height={48} priority />
           </a>
 
           <nav aria-label="Navegação principal">
@@ -170,7 +170,7 @@ export default function Home() {
 
       <footer className="footer">
         <div className="container footerWrap">
-          <Image src="/logo_principia.png" alt="Logotipo Birô Principia" width={180} height={56} />
+          <Image src="/logo_com_branco.png" alt="Logotipo Birô Principia" width={140} height={42} />
           <p>© {new Date().getFullYear()} Birô Principia. Serviços editoriais especializados em materiais didáticos.</p>
         </div>
       </footer>
