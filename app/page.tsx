@@ -1,15 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { SectionTitle } from '@/components/SectionTitle';
-import { blogItems, navItems, portfolioItems, services } from '@/content/site';
+import { MobileMenu } from '@/components/MobileMenu';
+import { navItems, services, teamMembers, contactInfo } from '@/content/site';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Birô Principia',
-  description: 'Birô editorial focado em material didático, diagramação e revisão técnica.',
-  url: 'https://www.exemplo.com.br',
-  logo: 'https://www.exemplo.com.br/logo_principia.png',
+  description:
+    'Birô editorial especializado em revisão técnica, elaboração de originais e serviços editoriais para materiais didáticos de Ciências da Natureza, Matemática e Computação, alinhados à BNCC.',
+  url: `https://${contactInfo.domain}`,
+  logo: `https://${contactInfo.domain}/logo_principia.png`,
+  email: contactInfo.email,
 };
 
 export default function Home() {
@@ -36,85 +39,85 @@ export default function Home() {
           <a className="btn primary navCta" href="#contato">
             Orçamento
           </a>
+
+          <MobileMenu navItems={navItems} />
         </div>
       </header>
 
       <section id="inicio" className="hero container">
         <div>
-          <span className="eyebrow">Birô editorial para materiais didáticos</span>
-          <h1>Site inicial moderno, rápido e pronto para evoluir com portfólio e blog.</h1>
+          <span className="eyebrow">Birô editorial especializado em materiais didáticos</span>
+          <h1>Excelência editorial em Ciências da Natureza, Matemática e Computação</h1>
           <p>
-            Estrutura pensada para subir no GitHub e publicar na Vercel com alto desempenho, foco mobile e base
-            preparada para integração com CMS e automações futuras.
+            Com mais de 10 anos de experiência no mercado editorial educacional, o Birô Principia oferece serviços
+            especializados de revisão técnica, elaboração de originais e produção de conteúdo didático alinhado à BNCC.
+            Nossa equipe reúne formação acadêmica de ponta — do mestrado ao pós-doutorado — pela Universidade de São Paulo.
           </p>
 
           <div className="heroActions">
             <a className="btn primary" href="#contato">
               Solicitar orçamento
             </a>
-            <a className="btn ghost" href="#portfolio">
-              Ver galeria
-            </a>
           </div>
 
           <div className="quickInfo">
-            <span>✓ Responsivo (celular e desktop)</span>
-            <span>✓ Estrutura pronta para CMS</span>
-            <span>✓ SEO inicial implementado</span>
+            <span>✓ Alinhamento à BNCC</span>
+            <span>✓ +10 anos de experiência</span>
+            <span>✓ Equipe com pós-doutorado (USP)</span>
           </div>
         </div>
 
-        <aside className="heroCard" aria-label="Resumo técnico da versão inicial">
-          <h2>Base técnica da versão inicial</h2>
+        <aside className="heroCard" aria-label="Áreas de atuação">
+          <h2>Áreas de atuação</h2>
           <p>
-            Projeto desenvolvido em Next.js com TypeScript, arquitetura modular de conteúdo e componentes reutilizáveis.
+            Atuamos em todas as disciplinas de Ciências da Natureza e Exatas para a educação básica,
+            com especialização nas seguintes áreas:
           </p>
           <ul>
-            <li>Seções institucionais prontas para edição de conteúdo</li>
-            <li>Galeria de portfólio preparada para integração com mídia</li>
-            <li>Bloco de blog inicial para evolução com posts dinâmicos</li>
-            <li>Formulário pronto para integração com API de contato</li>
+            <li>Física — incluindo abordagens experimentais e conceituais</li>
+            <li>Química — do ensino fundamental ao médio</li>
+            <li>Biologia — ciências da vida e meio ambiente</li>
+            <li>Matemática — do letramento ao pensamento algébrico</li>
+            <li>Computação — pensamento computacional e programação</li>
           </ul>
         </aside>
       </section>
 
-      <section id="sobre" className="section container">
+      <section id="quem-somos" className="section container">
         <SectionTitle
-          title="Apresentação do Birô"
-          subtitle="Texto institucional inicial (frio) para você substituir por missão, história, diferenciais e área de atuação."
+          title="Quem Somos"
+          subtitle="Editores experientes com formação acadêmica pela USP, dedicados à qualidade editorial em materiais didáticos."
         />
-        <div className="aboutGrid">
-          <article className="card soft">
-            <h3>Posicionamento</h3>
-            <p>
-              Produção editorial com foco em materiais didáticos claros, organizados e visualmente consistentes para
-              diferentes públicos.
-            </p>
-          </article>
-          <article className="card soft">
-            <h3>Metodologia</h3>
-            <p>
-              Fluxo de trabalho baseado em planejamento, produção, revisão e entrega, garantindo previsibilidade e
-              qualidade técnica.
-            </p>
-          </article>
-          <article className="card soft">
-            <h3>Escalabilidade</h3>
-            <p>
-              Estrutura pronta para expandir com páginas internas, gestão por CMS e publicação contínua de artigos no
-              blog.
-            </p>
-          </article>
+
+        <div className="teamGrid">
+          {teamMembers.map((member) => (
+            <article key={member.name} className="teamCard">
+              <h3>{member.name}</h3>
+              <p className="teamRole">{member.role}</p>
+              <p className="teamCredentials">{member.credentials}</p>
+              <div className="teamAreas">
+                {member.areas.map((area) => (
+                  <span key={area} className="areaPill">{area}</span>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
+
+        <p className="teamSummary">
+          Juntos, combinamos rigor científico e experiência editorial para entregar materiais didáticos que atendem
+          aos mais altos padrões de qualidade. Nossa atuação abrange desde a elaboração de originais até a revisão
+          técnica final, sempre com foco na precisão conceitual e na adequação pedagógica exigida pela BNCC.
+        </p>
       </section>
 
       <section id="servicos" className="section container">
         <SectionTitle
           title="Serviços"
-          subtitle="Cards com descrição objetiva e espaço para detalhar escopo, prazo e formatos de entrega."
+          subtitle="Soluções editoriais completas para materiais didáticos impressos e digitais, do original à publicação."
         />
 
-        <div className="grid grid2">
+        <div className="grid gridAuto">
           {services.map((service) => (
             <article key={service.title} className="card serviceCard">
               <h3>{service.title}</h3>
@@ -129,61 +132,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="portfolio" className="section container">
-        <SectionTitle
-          title="Portfólio em formato de galeria"
-          subtitle="Demonstração inicial para exibir documentos em Word/PDF, capas, projetos e amostras por categoria."
-        />
-
-        <div className="grid grid3">
-          {portfolioItems.map((item, index) => (
-            <article key={item.title} className="portfolioCard">
-              <div className="thumb" aria-hidden>
-                <span>{item.category}</span>
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.summary}</p>
-              <small>Projeto #{index + 1}</small>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="blog" className="section container">
-        <SectionTitle
-          title="Blog e conteúdo"
-          subtitle="Área inicial para publicar artigos e fortalecer presença orgânica com SEO."
-        />
-
-        <div className="grid grid3">
-          {blogItems.map((post) => (
-            <article key={post.title} className="card blogCard">
-              <span className="tag">{post.tag}</span>
-              <h3>{post.title}</h3>
-              <p>{post.excerpt}</p>
-              <div className="metaRow">
-                <small>{post.date}</small>
-                <a href="#" aria-label={`Abrir artigo: ${post.title}`}>
-                  Ler mais →
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="contato" className="section container contact">
         <div>
           <SectionTitle
             title="Contato e orçamento"
-            subtitle="Formulário de exemplo pronto para integração com envio por e-mail ou CRM."
+            subtitle="Entre em contato para discutir seu projeto editorial. Respondemos em até 24 horas úteis."
           />
           <div className="contactCtas">
-            <a className="btn ghost" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">
-              WhatsApp comercial
-            </a>
-            <Link className="btn ghost" href="mailto:contato@exemplo.com.br">
-              E-mail institucional
+            <Link className="btn primary" href={`mailto:${contactInfo.email}`}>
+              {contactInfo.email}
             </Link>
           </div>
         </div>
@@ -199,11 +156,11 @@ export default function Home() {
           </label>
           <label htmlFor="service">
             Serviço de interesse
-            <input id="service" type="text" placeholder="Ex: diagramação de apostila" />
+            <input id="service" type="text" placeholder="Ex: revisão técnica de apostila" />
           </label>
           <label htmlFor="message">
             Mensagem
-            <textarea id="message" rows={4} placeholder="Descreva seu projeto" />
+            <textarea id="message" rows={4} placeholder="Descreva seu projeto editorial" />
           </label>
           <button type="button" className="btn primary">
             Enviar solicitação
@@ -213,8 +170,8 @@ export default function Home() {
 
       <footer className="footer">
         <div className="container footerWrap">
-          <Image src="/logo-biro-principia.svg" alt="Logotipo Birô Principia" width={180} height={56} />
-          <p>© {new Date().getFullYear()} Birô Principia. Base inicial para evolução com CMS, blog e galeria.</p>
+          <Image src="/logo_principia.png" alt="Logotipo Birô Principia" width={180} height={56} />
+          <p>© {new Date().getFullYear()} Birô Principia. Serviços editoriais especializados em materiais didáticos.</p>
         </div>
       </footer>
     </main>

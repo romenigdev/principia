@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/portfolio', '/blog'],
     },
-    sitemap: 'https://www.exemplo.com.br/sitemap.xml',
+    sitemap: 'https://www.biroprincipia.com.br/sitemap.xml',
   };
 }
