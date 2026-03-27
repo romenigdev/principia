@@ -13,7 +13,7 @@
   --blue-soft: #e9f0fc;
   --red: #c21f2f;
   --red-soft: #faeaee;
-  --radius-section: 40px;
+  --radius-section: 0;
 }
 
 * {
@@ -53,8 +53,10 @@ section[id] {
 /* ── Header ── */
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 40;
   background: rgba(15, 27, 45, 0.97);
   backdrop-filter: blur(10px);
@@ -70,7 +72,7 @@ section[id] {
 }
 
 .brand img {
-  height: 62px;
+  height: 72px;
   width: auto;
 }
 
@@ -203,6 +205,10 @@ section[id] {
   background: var(--navy);
   color: #fff;
   padding: 72px 0;
+}
+
+.sectionDark:first-of-type {
+  padding-top: 144px;
 }
 
 .sectionDark + .sectionLight {
@@ -625,9 +631,6 @@ textarea:focus {
     padding: 48px 0;
   }
 
-  :root {
-    --radius-section: 28px;
-  }
 }
 
 @media (max-width: 620px) {
@@ -642,10 +645,6 @@ textarea:focus {
 
   .sectionHeader h2 {
     font-size: clamp(1.3rem, 4vw, 1.7rem);
-  }
-
-  :root {
-    --radius-section: 20px;
   }
 
   .footerWrap {
