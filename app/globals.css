@@ -42,7 +42,7 @@ a {
 }
 
 section[id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 40px;
 }
 
 .container {
@@ -72,7 +72,7 @@ section[id] {
 }
 
 .brand img {
-  height: 72px;
+  height: 80px;
   width: auto;
 }
 
@@ -208,7 +208,7 @@ section[id] {
 }
 
 .sectionDark:first-of-type {
-  padding-top: 144px;
+  padding-top: 120px;
 }
 
 .sectionDark + .sectionLight {
@@ -299,10 +299,10 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 22px;
+  padding: 8px 20px;
   border-radius: 999px;
   border: 1px solid transparent;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.2s ease;
