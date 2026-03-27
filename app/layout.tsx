@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.exemplo.com.br'),
+  metadataBase: new URL('https://www.biroprincipia.com.br'),
   title: {
-    default: 'Birô Principia | Material Didático',
+    default: 'Birô Principia | Serviços Editoriais para Materiais Didáticos',
     template: '%s | Birô Principia',
   },
   description:
-    'Birô especializado em material didático, diagramação, revisão e produção editorial com atendimento personalizado.',
+    'Birô editorial especializado em revisão técnica, elaboração de originais e produção de materiais didáticos de Ciências da Natureza, Matemática e Computação, alinhados à BNCC.',
   openGraph: {
-    title: 'Birô Principia | Material Didático',
+    title: 'Birô Principia | Serviços Editoriais para Materiais Didáticos',
     description:
-      'Site institucional com apresentação, serviços, portfólio em galeria e estrutura pronta para blog.',
+      'Revisão técnica, elaboração de originais e serviços editoriais para materiais didáticos de Ciências e Matemática. Equipe com formação pela USP e mais de 10 anos de experiência.',
     type: 'website',
     locale: 'pt_BR',
   },
