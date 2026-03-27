@@ -23,7 +23,7 @@ export default function Home() {
       <header className="header">
         <div className="container nav">
           <a href="#inicio" className="brand" aria-label="Página inicial Birô Principia">
-            <Image src="/logo_com_branco.png" alt="Logotipo Birô Principia" width={160} height={48} priority />
+            <Image src="/logo_com_branco.png" alt="Logotipo Birô Principia" width={200} height={60} priority />
           </a>
 
           <nav aria-label="Navegação principal">
