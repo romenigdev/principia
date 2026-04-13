@@ -54,16 +54,16 @@ export const contactInfo = {
 
 export const services: Service[] = [
   {
-    title: 'Revisão Técnica',
+    title: 'Leitura Técnica',
     description:
-      'Análise do conteúdo científico por especialistas da área, verificando a precisão de conceitos, dados, fórmulas e nomenclatura.',
+      'Análise do conteúdo teórico por especialistas da área, verificando a precisão de conceitos, dados, fórmulas e nomenclatura.',
     bullets: ['Verificação de precisão conceitual', 'Adequação à BNCC e aos PCNs', 'Parecer técnico fundamentado'],
   },
   {
     title: 'Elaboração de Originais',
     description:
-      'Desenvolvimento autoral de textos didáticos, do planejamento editorial à entrega do manuscrito, com progressão pedagógica e rigor técnico.',
-    bullets: ['Textos autorais para livros e coleções', 'Estruturação de sumário e progressão', 'Adequação de linguagem ao segmento'],
+      'Autoria de textos didáticos, do planejamento editorial à entrega do manuscrito, com progressão pedagógica e rigor técnico.',
+    bullets: ['Textos autorais para livros e coleções', 'Estruturação de conteúdo programático', 'Adequação de linguagem ao segmento'],
   },
   {
     title: 'Leitura de Provas',
@@ -72,10 +72,10 @@ export const services: Service[] = [
     bullets: ['Cotejo com originais', 'Conferência de emendas e correções', 'Verificação de padrão tipográfico'],
   },
   {
-    title: 'Leitura Técnica',
+    title: 'Edição',
     description:
-      'Avaliação especializada do conteúdo por profissional com formação na disciplina, validando abordagens e adequação ao nível de ensino.',
-    bullets: ['Validação de conceitos e abordagens', 'Análise de adequação ao nível escolar', 'Relatório com apontamentos técnicos'],
+      'Preparação e tratamento editorial do texto, garantindo consistência de estilo, padronização de linguagem e adequação às normas da editora.',
+    bullets: ['Copidesque e preparação de texto', 'Padronização de estilo e linguagem', 'Adequação às normas editoriais'],
   },
   {
     title: 'Leitura Crítica',
@@ -88,12 +88,6 @@ export const services: Service[] = [
     description:
       'Elaboração de roteiros para objetos educacionais digitais, videoaulas e recursos interativos, com linguagem e estrutura adequadas ao meio.',
     bullets: ['Roteiros para videoaulas e animações', 'Objetos educacionais digitais (OEDs)', 'Estruturação de trilhas de aprendizagem'],
-  },
-  {
-    title: 'Itens, Rubricas e Avaliações',
-    description:
-      'Elaboração de itens de avaliação com distratores plausíveis, gabaritos comentados e rubricas por competência, alinhados à BNCC.',
-    bullets: ['Itens objetivos e dissertativos', 'Rubricas e matrizes de avaliação', 'Avaliações diagnósticas e formativas'],
   },
 ];
 

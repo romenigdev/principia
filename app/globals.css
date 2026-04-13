@@ -377,68 +377,19 @@ h1 {
 
 /* ── Team (Quem Somos) ── */
 
-.teamGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.teamCard {
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--blue);
-  border-radius: 16px;
-  padding: 28px;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.teamCard:hover {
-  box-shadow: 0 12px 32px rgba(20, 29, 45, 0.1);
-  transform: translateY(-3px);
-}
-
-.teamCard h3 {
-  margin: 0 0 4px;
-  font-size: 1.15rem;
-  color: var(--text);
-}
-
-.teamRole {
-  margin: 0 0 12px;
-  font-weight: 600;
-  color: var(--blue);
-  font-size: 0.88rem;
-}
-
-.teamCredentials {
-  margin: 0 0 16px;
-  color: var(--text-soft);
-  font-size: 0.92rem;
-  line-height: 1.65;
-}
-
-.teamAreas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.areaPill {
-  display: inline-block;
-  padding: 4px 11px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--blue);
-  background: var(--blue-soft);
-}
-
-.teamSummary {
-  margin-top: 32px;
+.teamContent {
   max-width: 75ch;
   line-height: 1.75;
   color: var(--text-soft);
   font-size: 0.97rem;
+}
+
+.teamContent p {
+  margin: 0 0 16px;
+}
+
+.teamContent p:last-child {
+  margin-bottom: 0;
 }
 
 /* ── Grids ── */
@@ -619,10 +570,6 @@ textarea:focus {
   .grid2,
   .grid3,
   .contact {
-    grid-template-columns: 1fr;
-  }
-
-  .teamGrid {
     grid-template-columns: 1fr;
   }
 
