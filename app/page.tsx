@@ -96,8 +96,8 @@ export default function Home() {
           <div className="teamContent">
             <p>
               Somos uma equipe com formação acadêmica pela Universidade de São Paulo, reunindo licenciatura,
-              mestrado e pós-doutorado nas áreas de Ciências Exatas e da Natureza. Atuamos há mais de dez anos
-              no mercado editorial educacional brasileiro, com experiência em grandes editoras e projetos
+              mestrado e pós-doutorado nas áreas de Ciências Exatas e da Natureza. Nossos profissionais atuam há mais de dez anos
+              no mercado editorial brasileiro, com experiência em grandes editoras e projetos
               didáticos de abrangência nacional.
             </p>
             <p>
