@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { SectionTitle } from '@/components/SectionTitle';
 import { MobileMenu } from '@/components/MobileMenu';
-import { navItems, services, teamMembers, contactInfo } from '@/content/site';
+import { navItems, services, contactInfo } from '@/content/site';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -48,10 +48,10 @@ export default function Home() {
         <div className="container heroInner">
           <div className="heroText">
             <span className="eyebrow">Birô editorial para materiais didáticos</span>
-            <h1>Revisão técnica, elaboração de originais e produção editorial para educação básica</h1>
+            <h1>Produção de conteúdo para materiais didáticos</h1>
             <p>
-              O Birô Principia presta serviços editoriais para editoras e instituições de ensino que desenvolvem materiais
-              didáticos de Ciências da Natureza, Matemática e Computação. Atuamos da concepção dos originais à leitura
+              O Birô Principia presta serviços editoriais para editoras e instituições de ensino, produzindo conteúdo para
+              materiais didáticos de Ciências da Natureza, Matemática e Computação. Atuamos da concepção dos originais à leitura
               de provas, com mais de dez anos de experiência no mercado editorial educacional brasileiro.
             </p>
 
@@ -63,7 +63,7 @@ export default function Home() {
 
             <div className="quickInfo">
               <span>✓ Conteúdo alinhado à BNCC</span>
-              <span>✓ Mais de 10 anos no mercado editorial</span>
+              <span>✓ Mais de 10 anos de experiência</span>
               <span>✓ Formação acadêmica pela USP</span>
             </div>
           </div>
@@ -93,26 +93,19 @@ export default function Home() {
             subtitle="Profissionais com formação pela USP e trajetória consolidada na produção editorial de materiais didáticos."
           />
 
-          <div className="teamGrid">
-            {teamMembers.map((member) => (
-              <article key={member.name} className="teamCard">
-                <h3>{member.name}</h3>
-                <p className="teamRole">{member.role}</p>
-                <p className="teamCredentials">{member.credentials}</p>
-                <div className="teamAreas">
-                  {member.areas.map((area) => (
-                    <span key={area} className="areaPill">{area}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
+          <div className="teamContent">
+            <p>
+              Somos uma equipe com formação acadêmica pela Universidade de São Paulo, reunindo licenciatura,
+              mestrado e pós-doutorado nas áreas de Ciências Exatas e da Natureza. Atuamos há mais de dez anos
+              no mercado editorial educacional brasileiro, com experiência em grandes editoras e projetos
+              didáticos de abrangência nacional.
+            </p>
+            <p>
+              Nossa especialidade abrange Física, Química, Biologia, Matemática e Computação, sempre com
+              atenção à precisão conceitual, à progressão pedagógica e à adequação curricular exigida pela BNCC.
+              Da elaboração de originais à leitura de provas, oferecemos um acompanhamento completo do conteúdo.
+            </p>
           </div>
-
-          <p className="teamSummary">
-            Reunimos rigor acadêmico e vivência prática no fluxo editorial de grandes editoras. Nossa atuação vai
-            da elaboração de originais à revisão técnica e leitura de provas, sempre com atenção à precisão
-            conceitual e à adequação pedagógica exigidas pela BNCC.
-          </p>
         </div>
       </section>
 
@@ -121,7 +114,7 @@ export default function Home() {
         <div className="container">
           <SectionTitle
             title="Serviços"
-            subtitle="Do original à publicação — serviços editoriais para materiais didáticos impressos e digitais."
+            subtitle="Acompanhamento do conteúdo, do original à publicação — serviços editoriais para materiais didáticos impressos e digitais."
           />
 
           <div className="grid gridAuto">
