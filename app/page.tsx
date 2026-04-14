@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { SectionTitle } from '@/components/SectionTitle';
 import { MobileMenu } from '@/components/MobileMenu';
+import { ContactForm } from '@/components/ContactForm';
 import { navItems, services, contactInfo } from '@/content/site';
 
 const organizationSchema = {
@@ -148,27 +149,7 @@ export default function Home() {
             </div>
           </div>
 
-          <form className="contactForm" aria-label="Formulário de contato">
-            <label htmlFor="name">
-              Nome
-              <input id="name" type="text" placeholder="Seu nome" />
-            </label>
-            <label htmlFor="email">
-              E-mail
-              <input id="email" type="email" placeholder="seuemail@dominio.com" />
-            </label>
-            <label htmlFor="service">
-              Serviço de interesse
-              <input id="service" type="text" placeholder="Ex: revisão técnica, elaboração de originais" />
-            </label>
-            <label htmlFor="message">
-              Mensagem
-              <textarea id="message" rows={4} placeholder="Descreva brevemente sua demanda" />
-            </label>
-            <button type="submit" className="btn primary">
-              Enviar mensagem
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
