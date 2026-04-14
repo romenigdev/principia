@@ -12,15 +12,21 @@ export async function POST(request: Request) {
       );
     }
 
-    const port = Number(process.env.SMTP_PORT) || 587;
+    const smtpUser = (process.env.SMTP_USER ?? '').trim();
+    const smtpPass = (process.env.SMTP_PASS ?? '').trim();
+    const smtpHost = (process.env.SMTP_HOST ?? 'smtp.titan.email').trim();
+    const smtpPort = Number(process.env.SMTP_PORT) || 587;
+
+    console.log('SMTP config:', { host: smtpHost, port: smtpPort, user: smtpUser });
+
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port,
-      secure: port === 465,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      authMethod: 'LOGIN',
       auth: {
-        type: 'LOGIN',
-        user: process.env.SMTP_USER ?? '',
-        pass: process.env.SMTP_PASS ?? '',
+        user: smtpUser,
+        pass: smtpPass,
       },
       tls: {
         rejectUnauthorized: false,
@@ -28,7 +34,7 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: `"Birô Principia - Site" <${process.env.SMTP_USER}>`,
+      from: `"Birô Principia - Site" <${smtpUser}>`,
       replyTo: email,
       to: 'editorial@biroprincipia.com.br',
       subject: `Nova solicitação — ${service || 'Contato geral'}`,
