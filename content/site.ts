@@ -34,8 +34,8 @@ export type SimulatorFeature = {
 
 export const navItems = [
   { label: 'Início', href: '#inicio' },
-  { label: 'Quem somos', href: '#quem-somos' },
   { label: 'Serviços', href: '#servicos' },
+  { label: 'Quem somos', href: '#quem-somos' },
   // { label: 'Simuladores', href: '#simuladores' }, // seção removida por enquanto
   { label: 'Contato', href: '#contato' },
 ];

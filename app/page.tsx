@@ -87,8 +87,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Serviços ── */}
+      <section id="servicos" className="section surface">
+        <div className="container">
+          <SectionTitle
+            title="Serviços"
+            subtitle="Acompanhamento do conteúdo, do original à publicação — serviços editoriais para materiais didáticos impressos e digitais."
+          />
+
+          <div className="servicesGrid">
+            {services.map((service) => (
+              <article key={service.title} className="serviceCard">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <ul className="serviceList">
+                  {service.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Quem Somos ── */}
-      <section id="quem-somos" className="section surface">
+      <section id="quem-somos" className="section">
         <div className="container">
           <SectionTitle
             eyebrow="A equipe"
@@ -137,30 +161,6 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Serviços ── */}
-      <section id="servicos" className="section">
-        <div className="container">
-          <SectionTitle
-            title="Serviços"
-            subtitle="Acompanhamento do conteúdo, do original à publicação — serviços editoriais para materiais didáticos impressos e digitais."
-          />
-
-          <div className="servicesGrid">
-            {services.map((service) => (
-              <article key={service.title} className="serviceCard">
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <ul className="serviceList">
-                  {service.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
