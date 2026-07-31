@@ -18,7 +18,7 @@ export async function POST(request: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Birô Principia - Site <contato@biroprincipia.com.br>',
+        from: 'Principia - Site <contato@biroprincipia.com.br>',
         reply_to: email,
         to: ['editorial@biroprincipia.com.br'],
         subject: `Nova solicitação — ${service || 'Contato geral'}`,

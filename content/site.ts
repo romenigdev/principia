@@ -9,6 +9,13 @@ export type TeamMember = {
   role: string;
   credentials: string;
   areas: string[];
+  photo?: string;
+  initials?: string;
+};
+
+export type SimulatorFeature = {
+  title: string;
+  description: string;
 };
 
 /* ── Tipos preservados para reativação futura ── */
@@ -29,6 +36,7 @@ export const navItems = [
   { label: 'Início', href: '#inicio' },
   { label: 'Quem somos', href: '#quem-somos' },
   { label: 'Serviços', href: '#servicos' },
+  // { label: 'Simuladores', href: '#simuladores' }, // seção removida por enquanto
   { label: 'Contato', href: '#contato' },
 ];
 
@@ -36,15 +44,22 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Romenig da Silva Ribeiro',
     role: 'Matemática e Computação',
-    credentials: 'Licenciado em Matemática e Mestre em Ciência da Computação pelo IME-USP. Atua na elaboração e revisão de materiais didáticos de Matemática e Computação para a educação básica, com ênfase em pensamento computacional e programação.',
-    areas: ['Matemática', 'Computação', 'Pensamento Computacional'],
+    credentials:
+      'Licenciado em Matemática e Mestre em Ciência da Computação pelo Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP). Mais de 10 anos de experiência como editor de livros didáticos de Matemática e conteúdo digital de Matemática.',
+    areas: ['Matemática', 'Conteúdo Digital', 'Computação'],
+    photo: '/romenig.png',
   },
+  /* Ocultado por enquanto — Rodrigo não está atuando diretamente conosco no momento.
+     Preservado para reativação futura:
   {
     name: 'Rodrigo Uchida Ichikawa',
     role: 'Ciências da Natureza',
-    credentials: 'Bacharel em Física e Pós-doutor pelo IPEN-USP. Atua na elaboração e revisão técnica de materiais didáticos de Física, Química e Biologia, com experiência em pesquisa aplicada e divulgação científica.',
+    credentials:
+      'Bacharel em Física e Pós-doutor pelo IPEN-USP. Atua na elaboração e revisão técnica de materiais didáticos de Física, Química e Biologia, com experiência em pesquisa aplicada e divulgação científica.',
     areas: ['Física', 'Química', 'Biologia'],
+    initials: 'RI',
   },
+  */
 ];
 
 export const contactInfo = {
@@ -90,6 +105,39 @@ export const services: Service[] = [
     bullets: ['Roteiros para videoaulas e animações', 'Objetos educacionais digitais (OEDs)', 'Estruturação de trilhas de aprendizagem'],
   },
 ];
+
+export const simulators = {
+  eyebrow: 'Laboratório interativo',
+  title: 'Física e Matemática que se manipulam.',
+  lead: 'Do mesmo rigor técnico dos nossos materiais nasce uma família de simuladores para o Ensino Médio, alinhados à BNCC. Em vez de apenas ler sobre a função afim ou uma colisão, o estudante manipula: arrasta, prevê, executa e explica — e cada representação (algébrica, gráfica e tabular) se atualiza junto, na hora.',
+  features: [
+    {
+      title: 'Alinhados à BNCC',
+      description: 'Cada simulador mira habilidades específicas do Ensino Médio — da função afim às colisões e à conservação da energia.',
+    },
+    {
+      title: 'Aprender fazendo',
+      description: 'Missões guiadas no ciclo prever → executar → inspecionar → explicar, com devolutiva baseada em evidências.',
+    },
+    {
+      title: 'Matemática de verdade',
+      description: 'Fórmulas renderizadas com variáveis em itálico e frações em pé — nada de “a/b” improvisado.',
+    },
+    {
+      title: 'Sem fricção',
+      description: 'Roda 100% no navegador, sem instalação e sem login. Os dados ficam somente no dispositivo do estudante.',
+    },
+  ] as SimulatorFeature[],
+  capabilitiesTitle: 'E não paramos nos simuladores',
+  capabilitiesLead: 'A mesma equipe que edita também programa. Se o seu projeto pede um objeto digital sob medida, a gente desenha e desenvolve.',
+  capabilities: [
+    'Objetos educacionais digitais (OEDs)',
+    'Figuras e gráficos interativos',
+    'Calculadoras e visualizações',
+    'Animações e videoaulas',
+    'Ferramentas web sob medida',
+  ],
+};
 
 /* ── Dados preservados para reativação futura ── */
 
