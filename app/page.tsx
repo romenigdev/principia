@@ -2,6 +2,7 @@ import { SectionTitle } from '@/components/SectionTitle';
 import { MobileMenu } from '@/components/MobileMenu';
 import { ContactForm } from '@/components/ContactForm';
 import { BrandLogo } from '@/components/BrandLogo';
+import { DigitalContentSection } from '@/components/DigitalContentSection';
 import { navItems, services, teamMembers, contactInfo } from '@/content/site';
 
 const organizationSchema = {
@@ -111,8 +112,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Conteúdo digital interativo + Clientes ── */}
+      <DigitalContentSection />
+
       {/* ── Quem Somos ── */}
-      <section id="quem-somos" className="section">
+      <section id="quem-somos" className="section surface">
         <div className="container">
           <SectionTitle
             eyebrow="A equipe"
@@ -172,7 +176,7 @@ export default function Home() {
           Para reativar: importe <SimulatorsSection /> aqui e recoloque o item de nav. */}
 
       {/* ── Contato ── */}
-      <section id="contato" className="section surface">
+      <section id="contato" className="section">
         <div className="container contact">
           <div className="contactAside">
             <SectionTitle

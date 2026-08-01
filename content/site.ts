@@ -18,6 +18,25 @@ export type SimulatorFeature = {
   description: string;
 };
 
+export type Shot = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption: string;
+  /** 'wide' ocupa mais espaço na grade (captura de desktop). */
+  format: 'wide' | 'phone';
+};
+
+export type Client = {
+  name: string;
+  logo: string;
+  logoWidth: number;
+  logoHeight: number;
+  description: string;
+  url?: string;
+};
+
 /* ── Tipos preservados para reativação futura ── */
 // export type PortfolioItem = {
 //   title: string;
@@ -35,6 +54,7 @@ export type SimulatorFeature = {
 export const navItems = [
   { label: 'Início', href: '#inicio' },
   { label: 'Serviços', href: '#servicos' },
+  { label: 'Conteúdo digital', href: '#conteudo-digital' },
   { label: 'Quem somos', href: '#quem-somos' },
   // { label: 'Simuladores', href: '#simuladores' }, // seção removida por enquanto
   { label: 'Contato', href: '#contato' },
@@ -103,6 +123,96 @@ export const services: Service[] = [
     description:
       'Elaboração de roteiros para objetos educacionais digitais, videoaulas e recursos interativos, com linguagem e estrutura adequadas ao meio.',
     bullets: ['Roteiros para videoaulas e animações', 'Objetos educacionais digitais (OEDs)', 'Estruturação de trilhas de aprendizagem'],
+  },
+  {
+    title: 'Objetos Digitais Interativos em HTML',
+    description:
+      'Concepção e desenvolvimento de objetos educacionais interativos em HTML — do desenho pedagógico ao código final, prontos para rodar em qualquer navegador.',
+    bullets: [
+      'Simulações, gráficos manipuláveis e calculadoras',
+      'Atividades interativas com resposta imediata',
+      'Entrega em HTML, sem plugins nem instalação',
+    ],
+  },
+];
+
+export const digitalContent = {
+  eyebrow: 'Conteúdo digital interativo',
+  title: 'Conteúdo que o aluno manipula, não apenas lê',
+  subtitle:
+    'Quando o conceito pede movimento, tentativa e erro, o material precisa deixar de ser página e virar ferramenta. A gente projeta e desenvolve o objeto digital inteiro — da ideia pedagógica ao HTML que roda no navegador do aluno.',
+  showcase: {
+    name: 'TucaProg',
+    logo: '/tucaprog-logo.png',
+    logoWidth: 2934,
+    logoHeight: 424,
+    chip: 'Estudo de caso',
+    tagline: 'Programação visual em blocos para crianças',
+    lead: 'Um tucano, seis blocos e um plano cartesiano. A criança encaixa os comandos, aperta Executar — e o Tuca voa pela tela deixando rastro. É a tartaruga do LOGO, de Seymour Papert, repaginada para o navegador: sem instalação, sem login e funcionando até offline.',
+    features: [
+      {
+        title: 'Seis blocos, de propósito',
+        description:
+          'Um conjunto enxuto que a criança lê de uma vez e domina na primeira sessão: desenho, movimento, repetição e números.',
+      },
+      {
+        title: 'A matemática fica visível',
+        description:
+          'Cada quadradinho vale uma unidade e o centro é o (0, 0). Ângulo, repetição e distância deixam de ser abstração e viram desenho.',
+      },
+      {
+        title: 'Do celular ao computador',
+        description:
+          'A mesma experiência no telefone da criança e na máquina da escola, com blocos e palco lado a lado na tela grande.',
+      },
+      {
+        title: 'Livre, leve e sem fricção',
+        description:
+          'Abre no navegador, instala como aplicativo e funciona sem internet. Gratuito e de código aberto.',
+      },
+    ] as SimulatorFeature[],
+    shots: [
+      {
+        src: '/tucaprog-desktop.png',
+        alt: 'TucaProg no computador, com os blocos de programação à esquerda e o desenho gerado pelo Tuca à direita.',
+        width: 2000,
+        height: 1600,
+        caption: 'No computador — blocos e palco lado a lado',
+        format: 'wide',
+      },
+      {
+        src: '/tucaprog-blocos.png',
+        alt: 'TucaProg no celular, mostrando o programa montado com blocos de repetição, movimento e cor.',
+        width: 1170,
+        height: 2532,
+        caption: 'No celular — montando o programa',
+        format: 'phone',
+      },
+      {
+        src: '/tucaprog-desenho.png',
+        alt: 'TucaProg no celular, exibindo a rosácea colorida desenhada pelo Tuca no plano cartesiano.',
+        width: 1170,
+        height: 2532,
+        caption: 'O resultado — repetição vira rosácea',
+        format: 'phone',
+      },
+    ] as Shot[],
+    note: 'Desenvolvido para o Humor com Ciência.',
+  },
+};
+
+export const clientsTitle = 'Clientes';
+export const clientsSubtitle = 'Instituições e projetos que confiam no nosso trabalho.';
+
+export const clients: Client[] = [
+  {
+    name: 'Humor com Ciência',
+    logo: '/humor-com-ciencia.png',
+    logoWidth: 1071,
+    logoHeight: 173,
+    description:
+      'Divulgação científica e educação. Parceiro na produção de conteúdo digital e no desenvolvimento do TucaProg.',
+    url: 'https://www.humorcomciencia.com',
   },
 ];
 
