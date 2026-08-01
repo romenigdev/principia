@@ -61,9 +61,20 @@ export function DigitalContentSection() {
 
           <footer className="showcaseFoot">
             <p className="showcaseNote">{showcase.note}</p>
-            <a className="btn primary" href="#contato">
-              Quero um projeto assim
-            </a>
+            <div className="showcaseActions">
+              <a
+                className="btn tuca"
+                href={showcase.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Experimente o ${showcase.name} (abre em nova aba)`}
+              >
+                Experimente! <span aria-hidden="true">→</span>
+              </a>
+              <a className="btn onDark" href="#contato">
+                Quero um projeto assim
+              </a>
+            </div>
           </footer>
         </article>
 

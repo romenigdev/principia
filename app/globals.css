@@ -346,6 +346,21 @@ section[id] {
 
 .btn.onDark:hover {
   background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+/* Ação principal do TucaProg — laranja da própria marca. */
+.btn.tuca {
+  background: #e8912d;
+  border-color: #e8912d;
+  color: #2a1e14;
+  box-shadow: 0 6px 18px rgba(232, 145, 45, 0.26);
+}
+
+.btn.tuca:hover {
+  background: #f4a145;
+  border-color: #f4a145;
+  box-shadow: 0 9px 26px rgba(232, 145, 45, 0.4);
 }
 
 .btn:disabled {
@@ -881,6 +896,12 @@ section[id] {
   margin: 0;
   font-size: 0.94rem;
   color: rgba(255, 255, 255, 0.72);
+}
+
+.showcaseActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* ── Clientes ── */
@@ -1465,8 +1486,12 @@ textarea:focus {
     align-items: flex-start;
   }
 
-  .showcaseFoot .btn {
+  .showcaseActions {
     width: 100%;
+  }
+
+  .showcaseActions .btn {
+    flex: 1 1 100%;
   }
 
   .heroText p,

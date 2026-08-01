@@ -146,6 +146,7 @@ export const digitalContent = {
     logo: '/tucaprog-logo.png',
     logoWidth: 2934,
     logoHeight: 424,
+    url: 'https://tucaprog.biroprincipia.com.br',
     chip: 'Estudo de caso',
     tagline: 'Programação visual em blocos para crianças',
     lead: 'Um tucano, seis blocos e um plano cartesiano. A criança encaixa os comandos, aperta Executar — e o Tuca voa pela tela deixando rastro. É a tartaruga do LOGO, de Seymour Papert, repaginada para o navegador: sem instalação, sem login e funcionando até offline.',
