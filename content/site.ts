@@ -18,14 +18,20 @@ export type SimulatorFeature = {
   description: string;
 };
 
-export type Shot = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  caption: string;
-  /** 'wide' ocupa mais espaço na grade (captura de desktop). */
-  format: 'wide' | 'phone';
+export type InteractiveApp = {
+  id: string;
+  name: string;
+  /** Rótulo curto usado na navegação do carrossel. */
+  shortName: string;
+  chip: string;
+  tagline: string;
+  description: string;
+  highlights: string[];
+  url: string;
+  /** Cor de acento — uma faceta do espectro da gema. */
+  accent: string;
+  shot: { src: string; alt: string; width: number; height: number };
+  logo?: { src: string; width: number; height: number };
 };
 
 export type Client = {
@@ -138,69 +144,104 @@ export const services: Service[] = [
 
 export const digitalContent = {
   eyebrow: 'Conteúdo digital interativo',
-  title: 'Conteúdo que o aluno manipula, não apenas lê',
+  title: 'Aplicações que o aluno manipula, não apenas lê',
   subtitle:
-    'Quando o conceito pede movimento, tentativa e erro, o material precisa deixar de ser página e virar ferramenta. A gente projeta e desenvolve o objeto digital inteiro — da ideia pedagógica ao HTML que roda no navegador do aluno.',
-  showcase: {
-    name: 'TucaProg',
-    logo: '/tucaprog-logo.png',
-    logoWidth: 2934,
-    logoHeight: 424,
-    url: 'https://tucaprog.biroprincipia.com.br',
-    chip: 'Estudo de caso',
-    tagline: 'Programação visual em blocos para crianças',
-    lead: 'Um tucano, seis blocos e um plano cartesiano. A criança encaixa os comandos, aperta Executar — e o Tuca voa pela tela deixando rastro. É a tartaruga do LOGO, de Seymour Papert, repaginada para o navegador: sem instalação, sem login e funcionando até offline.',
-    features: [
-      {
-        title: 'Seis blocos, de propósito',
-        description:
-          'Um conjunto enxuto que a criança lê de uma vez e domina na primeira sessão: desenho, movimento, repetição e números.',
-      },
-      {
-        title: 'A matemática fica visível',
-        description:
-          'Cada quadradinho vale uma unidade e o centro é o (0, 0). Ângulo, repetição e distância deixam de ser abstração e viram desenho.',
-      },
-      {
-        title: 'Do celular ao computador',
-        description:
-          'A mesma experiência no telefone da criança e na máquina da escola, com blocos e palco lado a lado na tela grande.',
-      },
-      {
-        title: 'Livre, leve e sem fricção',
-        description:
-          'Abre no navegador, instala como aplicativo e funciona sem internet. Gratuito e de código aberto.',
-      },
-    ] as SimulatorFeature[],
-    shots: [
-      {
-        src: '/tucaprog-desktop.png',
-        alt: 'TucaProg no computador, com os blocos de programação à esquerda e o desenho gerado pelo Tuca à direita.',
-        width: 2000,
-        height: 1600,
-        caption: 'No computador — blocos e palco lado a lado',
-        format: 'wide',
-      },
-      {
-        src: '/tucaprog-blocos.png',
-        alt: 'TucaProg no celular, mostrando o programa montado com blocos de repetição, movimento e cor.',
-        width: 1170,
-        height: 2532,
-        caption: 'No celular — montando o programa',
-        format: 'phone',
-      },
-      {
-        src: '/tucaprog-desenho.png',
-        alt: 'TucaProg no celular, exibindo a rosácea colorida desenhada pelo Tuca no plano cartesiano.',
-        width: 1170,
-        height: 2532,
-        caption: 'O resultado — repetição vira rosácea',
-        format: 'phone',
-      },
-    ] as Shot[],
-    note: 'Desenvolvido para o Humor com Ciência.',
-  },
+    'Quando o conceito pede movimento, tentativa e erro, o material precisa deixar de ser página e virar ferramenta. Estas são as aplicações que projetamos e desenvolvemos — todas rodam no navegador, sem instalação e sem login.',
+  note: 'Cada aplicação nasceu de uma necessidade real de sala de aula. Podemos desenvolver a sua também.',
 };
+
+export const interactiveApps: InteractiveApp[] = [
+  {
+    id: 'tucaprog',
+    name: 'TucaProg',
+    shortName: 'TucaProg',
+    chip: 'Pensamento computacional',
+    tagline: 'Programação em blocos para crianças',
+    description:
+      'Um tucano, seis blocos e um plano cartesiano. A criança encaixa os comandos, aperta Executar — e o Tuca voa pela tela deixando rastro. É a tartaruga do LOGO, de Seymour Papert, repaginada para o navegador.',
+    highlights: [
+      'Seis blocos apenas — a criança domina o conjunto na primeira sessão',
+      'Ângulo, distância e repetição deixam de ser abstração e viram desenho',
+      'Instala como aplicativo e funciona sem internet',
+    ],
+    url: 'https://tucaprog.biroprincipia.com.br',
+    accent: '#f59e0b',
+    shot: {
+      src: '/app-tucaprog.png',
+      alt: 'TucaProg: blocos de repetição à esquerda e, à direita, a rosácea de doze quadrados desenhada pelo Tuca no plano cartesiano.',
+      width: 2100,
+      height: 1680,
+    },
+    logo: { src: '/tucaprog-logo.png', width: 2934, height: 424 },
+  },
+  {
+    id: 'cacoprog',
+    name: 'CacoProg',
+    shortName: 'CacoProg',
+    chip: 'Programação com Python',
+    tagline: 'Dos blocos ao Python, na mesma tela',
+    description:
+      'O irmão mais velho do TucaProg. O aluno monta o programa encaixando blocos e vê o código Python nascer ao lado, linha a linha — depois executa e lê a saída no console. Da programação estruturada à orientação a objetos.',
+    highlights: [
+      'Blocos e código Python lado a lado, sempre em sincronia',
+      'Python de verdade rodando no navegador, com console',
+      'Atividades com correção automática',
+    ],
+    url: 'https://cacoprog.biroprincipia.com.br',
+    accent: '#ea580c',
+    shot: {
+      src: '/app-cacoprog.png',
+      alt: 'CacoProg: blocos de contagem regressiva à esquerda, o código Python gerado ao centro e a saída do programa no console.',
+      width: 2100,
+      height: 1680,
+    },
+    logo: { src: '/cacoprog-logo.png', width: 2934, height: 424 },
+  },
+  {
+    id: 'geometria',
+    name: 'Principia Geometria',
+    shortName: 'Geometria',
+    chip: 'Geometria dinâmica',
+    tagline: 'Geometria dinâmica que corrige sozinha',
+    description:
+      'Construções que se movem sem perder as propriedades — e um corretor que decide se a construção do aluno está certa mesmo quando o caminho é diferente do que o professor imaginou. A potência do iGeom com a ergonomia do GeoGebra.',
+    highlights: [
+      'Régua e compasso no navegador, com barra de entrada em português',
+      'Correção automática que aceita soluções fora do roteiro',
+      'Janela de Álgebra e protocolo de construção',
+    ],
+    url: 'https://geometria.biroprincipia.com.br',
+    accent: '#7c3aed',
+    shot: {
+      src: '/app-geometria.png',
+      alt: 'Principia Geometria: triângulo construído no plano com as três mediatrizes traçadas e a janela de Álgebra listando os objetos.',
+      width: 2100,
+      height: 1680,
+    },
+  },
+  {
+    id: 'graficos',
+    name: 'Calculadora Gráfica',
+    shortName: 'Calculadora',
+    chip: 'Funções e álgebra',
+    tagline: 'A função vira gráfico enquanto se digita',
+    description:
+      'Escreva a função e o gráfico aparece na hora, com notação matemática de verdade. Parâmetros ganham controle deslizante para animar a curva e mostrar, ao vivo, o que cada coeficiente faz.',
+    highlights: [
+      'Parâmetros animáveis por controle deslizante',
+      'Equações implícitas, funções compostas e curvas sobrepostas',
+      'Mesma experiência no computador e no celular',
+    ],
+    url: 'https://graficos.biroprincipia.com.br',
+    accent: '#2563eb',
+    shot: {
+      src: '/app-graficos.png',
+      alt: 'Calculadora gráfica da Principia: parábola, senoide com parâmetro ajustável e circunferência traçadas no mesmo plano.',
+      width: 2100,
+      height: 1680,
+    },
+  },
+];
 
 export const clientsTitle = 'Clientes';
 export const clientsSubtitle = 'Instituições e projetos que confiam no nosso trabalho.';

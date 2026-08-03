@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import { SectionTitle } from '@/components/SectionTitle';
-import { digitalContent, clients, clientsTitle, clientsSubtitle } from '@/content/site';
+import { AppsCarousel } from '@/components/AppsCarousel';
+import { digitalContent, interactiveApps, clients, clientsTitle, clientsSubtitle } from '@/content/site';
 
 export function DigitalContentSection() {
-  const { showcase } = digitalContent;
-
   return (
     <section id="conteudo-digital" className="section">
       <div className="container">
@@ -15,68 +14,9 @@ export function DigitalContentSection() {
           subtitle={digitalContent.subtitle}
         />
 
-        {/* ── Estudo de caso: TucaProg ── */}
-        <article className="showcase">
-          <header className="showcaseHead">
-            <Image
-              className="showcaseLogo"
-              src={showcase.logo}
-              alt={`Logotipo ${showcase.name}`}
-              width={showcase.logoWidth}
-              height={showcase.logoHeight}
-              sizes="(max-width: 700px) 240px, 300px"
-            />
-            <span className="showcaseChip">{showcase.chip}</span>
-          </header>
+        <AppsCarousel apps={interactiveApps} />
 
-          <p className="showcaseTagline">{showcase.tagline}</p>
-          <p className="showcaseLead">{showcase.lead}</p>
-
-          <div className="showcaseShots">
-            {showcase.shots.map((shot) => (
-              <figure key={shot.src} className={`shot shot--${shot.format}`}>
-                <Image
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={shot.width}
-                  height={shot.height}
-                  sizes={shot.format === 'wide' ? '(max-width: 860px) 92vw, 560px' : '(max-width: 860px) 44vw, 260px'}
-                />
-                <figcaption>{shot.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
-
-          <ul className="showcaseFeatures">
-            {showcase.features.map((feature) => (
-              <li key={feature.title}>
-                <span className="dot" aria-hidden="true" />
-                <div>
-                  <strong>{feature.title}</strong>
-                  <span>{feature.description}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <footer className="showcaseFoot">
-            <p className="showcaseNote">{showcase.note}</p>
-            <div className="showcaseActions">
-              <a
-                className="btn tuca"
-                href={showcase.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Experimente o ${showcase.name} (abre em nova aba)`}
-              >
-                Experimente! <span aria-hidden="true">→</span>
-              </a>
-              <a className="btn onDark" href="#contato">
-                Quero um projeto assim
-              </a>
-            </div>
-          </footer>
-        </article>
+        <p className="digitalNote">{digitalContent.note}</p>
 
         {/* ── Clientes ── */}
         <div className="clients">
