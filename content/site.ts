@@ -207,7 +207,7 @@ export const interactiveApps: InteractiveApp[] = [
     chip: 'Geometria dinâmica',
     tagline: 'Geometria dinâmica que corrige sozinha',
     description:
-      'Construções que se movem sem perder as propriedades — e um corretor que decide se a construção do aluno está certa mesmo quando o caminho é diferente do que o professor imaginou. A potência do iGeom com a ergonomia do GeoGebra.',
+      'Construções que se movem sem perder as propriedades — e um corretor que decide se a construção do aluno está certa mesmo quando o caminho é diferente do que o professor imaginou.',
     highlights: [
       'Régua e compasso no navegador, com barra de entrada em português',
       'Correção automática que aceita soluções fora do roteiro',
