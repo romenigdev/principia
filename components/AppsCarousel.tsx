@@ -100,18 +100,20 @@ export function AppsCarousel({ apps }: Props) {
         <div className="carouselInfo">
           <span className="carouselChip">{app.chip}</span>
 
-          {app.logo ? (
-            <Image
-              className="carouselLogo"
-              src={app.logo.src}
-              alt={app.name}
-              width={app.logo.width}
-              height={app.logo.height}
-              sizes="240px"
-            />
-          ) : (
-            <h3 className="carouselName">{app.name}</h3>
-          )}
+          <div className="carouselBrand">
+            {app.logo ? (
+              <Image
+                className="carouselLogo"
+                src={app.logo.src}
+                alt={app.name}
+                width={app.logo.width}
+                height={app.logo.height}
+                sizes="240px"
+              />
+            ) : (
+              <h3 className="carouselName">{app.name}</h3>
+            )}
+          </div>
 
           <p className="carouselTagline">{app.tagline}</p>
           <p className="carouselDescription">{app.description}</p>
@@ -134,34 +136,20 @@ export function AppsCarousel({ apps }: Props) {
         </div>
       </div>
 
-      {/* Controles */}
+      {/* Controles — setas + contador na mesma linha */}
       <div className="carouselControls">
         <button type="button" className="carouselArrow" onClick={() => goTo(index - 1)} aria-label="Aplicação anterior">
           <span aria-hidden="true">←</span>
         </button>
 
-        <div className="carouselDots">
-          {apps.map((item, i) => (
-            <button
-              key={item.id}
-              type="button"
-              className={`carouselDot${i === index ? ' isActive' : ''}`}
-              style={{ ['--tab-accent' as string]: item.accent }}
-              onClick={() => goTo(i)}
-              aria-label={`Ir para ${item.name}`}
-              aria-current={i === index}
-            />
-          ))}
-        </div>
+        <p className="carouselCounter" aria-live="polite">
+          {index + 1} de {total} · {app.name}
+        </p>
 
         <button type="button" className="carouselArrow" onClick={() => goTo(index + 1)} aria-label="Próxima aplicação">
           <span aria-hidden="true">→</span>
         </button>
       </div>
-
-      <p className="carouselCounter" aria-live="polite">
-        {index + 1} de {total} · {app.name}
-      </p>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { MobileMenu } from '@/components/MobileMenu';
 import { ContactForm } from '@/components/ContactForm';
 import { BrandLogo } from '@/components/BrandLogo';
 import { DigitalContentSection } from '@/components/DigitalContentSection';
-import { navItems, services, teamMembers, contactInfo } from '@/content/site';
+import { navItems, services, featuredService, teamMembers, contactInfo } from '@/content/site';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -67,9 +67,9 @@ export default function Home() {
             </div>
 
             <div className="quickInfo">
-              <span>✓ Conteúdo alinhado à BNCC</span>
-              <span>✓ Mais de 10 anos de experiência</span>
-              <span>✓ Formação acadêmica pela USP</span>
+              <span><i aria-hidden="true">✓</i>Conteúdo alinhado à BNCC</span>
+              <span><i aria-hidden="true">✓</i>Mais de 10 anos de experiência</span>
+              <span><i aria-hidden="true">✓</i>Formação acadêmica pela USP</span>
             </div>
           </div>
 
@@ -108,6 +108,19 @@ export default function Home() {
                 </ul>
               </article>
             ))}
+
+            <article className="serviceCard isFeatured">
+              <div>
+                <span className="featuredChip">Desenvolvimento próprio</span>
+                <h3>{featuredService.title}</h3>
+                <p>{featuredService.description}</p>
+              </div>
+              <ul className="serviceList">
+                {featuredService.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </article>
           </div>
         </div>
       </section>
@@ -183,18 +196,13 @@ export default function Home() {
               title="Contato"
               subtitle="Envie sua demanda ou solicite um orçamento. Retornamos em até um dia útil."
             />
-            <div className="contactCtas">
-              <a className="btn primary" href={`mailto:${contactInfo.email}`}>
-                {contactInfo.email}
-              </a>
-            </div>
             <div className="contactMeta">
               <div className="row">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="m3 7 9 6 9-6" />
                 </svg>
-                <span>{contactInfo.email}</span>
+                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
               </div>
               <div className="row">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">

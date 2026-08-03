@@ -130,17 +130,20 @@ export const services: Service[] = [
       'Elaboração de roteiros para objetos educacionais digitais, videoaulas e recursos interativos, com linguagem e estrutura adequadas ao meio.',
     bullets: ['Roteiros para videoaulas e animações', 'Objetos educacionais digitais (OEDs)', 'Estruturação de trilhas de aprendizagem'],
   },
-  {
-    title: 'Objetos Digitais Interativos em HTML',
-    description:
-      'Concepção e desenvolvimento de objetos educacionais interativos em HTML — do desenho pedagógico ao código final, prontos para rodar em qualquer navegador.',
-    bullets: [
-      'Simulações, gráficos manipuláveis e calculadoras',
-      'Atividades interativas com resposta imediata',
-      'Entrega em HTML, sem plugins nem instalação',
-    ],
-  },
 ];
+
+/* Serviço em destaque — faixa de largura total, faz a ponte com a seção
+   "Conteúdo digital interativo" logo abaixo. */
+export const featuredService: Service = {
+  title: 'Objetos Digitais Interativos em HTML',
+  description:
+    'Concepção e desenvolvimento de objetos educacionais interativos em HTML — do desenho pedagógico ao código final, prontos para rodar em qualquer navegador.',
+  bullets: [
+    'Simulações, gráficos manipuláveis e calculadoras',
+    'Atividades interativas com resposta imediata',
+    'Entrega em HTML, sem plugins nem instalação',
+  ],
+};
 
 export const digitalContent = {
   eyebrow: 'Conteúdo digital interativo',

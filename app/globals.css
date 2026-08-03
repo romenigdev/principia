@@ -1590,3 +1590,336 @@ textarea:focus {
     transform: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   REVISÃO DE LAYOUT — 13 correções de grade/alinhamento/ritmo.
+   Sem tokens novos. Cada bloco substitui a regra correspondente
+   acima; mantido em seção própria para leitura e reversão fáceis.
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Hero: card alinhado pelo topo (era align-items:center). */
+.heroInner {
+  align-items: flex-start;
+}
+
+/* 2. Hero: as três áreas em fileira, com marcador como régua superior. */
+.heroCard ul {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 22px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid #eef2f7;
+}
+
+.heroCard li {
+  display: grid;
+  gap: 9px;
+  align-items: initial;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.heroCard li::before {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.heroCard li:nth-child(1)::before { background: var(--spec-1); }
+.heroCard li:nth-child(2)::before { background: var(--spec-4); }
+.heroCard li:nth-child(3)::before { background: var(--spec-5); }
+
+/* 3. Hero: o ✓ como elemento (espaço e cor próprios). */
+.quickInfo span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 15px;
+}
+
+.quickInfo i {
+  font-style: normal;
+  color: var(--ok);
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+/* 4 + 5. Serviços: grade fecha (7º em destaque) e divisores alinham
+   por subgrid (título/descrição/lista em trilhas compartilhadas). */
+.servicesGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+}
+
+.serviceCard {
+  grid-row: span 3;
+  display: grid;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+.serviceCard h3 {
+  align-self: start;
+  margin: 0 0 9px;
+}
+
+.serviceCard > p {
+  align-self: start;
+  margin: 0;
+}
+
+.serviceCard .serviceList {
+  align-self: start;
+  align-content: start;
+  margin: 20px 0 0;
+}
+
+.serviceCard.isFeatured {
+  grid-row: auto;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 36px;
+  padding: 30px 32px;
+  background: var(--primary-bg);
+  border-color: var(--border-strong);
+  box-shadow: none;
+}
+
+.serviceCard.isFeatured > div {
+  flex: 1 1 360px;
+  min-width: 0;
+}
+
+.serviceCard.isFeatured h3 {
+  font-size: 1.32rem;
+  margin: 0 0 10px;
+}
+
+.serviceCard.isFeatured > div > p {
+  max-width: 56ch;
+}
+
+.serviceCard.isFeatured .serviceList {
+  flex: 1 1 320px;
+  min-width: 0;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  border-top: none;
+  gap: 14px;
+}
+
+.serviceCard.isFeatured .serviceList li {
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+.serviceCard.isFeatured:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.featuredChip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-pill);
+  padding: 4px 11px;
+  margin-bottom: 14px;
+}
+
+/* 6. Carrossel: slot de marca de altura fixa (logo ou nome). */
+.carouselBrand {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.carouselLogo {
+  max-height: 34px;
+  max-width: 230px;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.carouselName {
+  font-size: 1.55rem;
+  margin: 0;
+}
+
+/* 7. Carrossel: altura estável entre slides. */
+.carouselPanel {
+  align-items: start;
+}
+
+.carouselShot img {
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.carouselInfo {
+  display: flex;
+  flex-direction: column;
+  min-height: 524px;
+}
+
+.carouselCta {
+  align-self: start;
+  margin-top: auto;
+}
+
+/* 8. Carrossel: contador na linha das setas (dots removidos no TSX). */
+.carouselControls {
+  gap: 20px;
+}
+
+.carouselCounter {
+  margin: 0;
+  min-width: 190px;
+  font-family: var(--mono);
+}
+
+/* 9. Nota final vira legenda com filete. */
+.digitalNote {
+  margin: 24px 0 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--border-strong);
+  max-width: 68ch;
+  font-size: 0.95rem;
+  color: var(--text-weak);
+}
+
+/* 10. Clientes: faixa de largura total (1 logo à esquerda, texto à direita).
+   ⚠️ Com 2+ clientes, reverta para a grade original. */
+.clients {
+  margin-top: 64px;
+  padding-top: 44px;
+  border-top: 1px solid var(--border);
+}
+
+.clientsGrid {
+  display: block;
+}
+
+.clientCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  padding: 30px 34px;
+}
+
+.clientCard > a {
+  flex: 0 1 280px;
+  min-width: 0;
+}
+
+.clientLogo {
+  width: 100%;
+  max-width: 260px;
+}
+
+.clientCard p {
+  flex: 1 1 340px;
+  min-width: 0;
+  margin: 0;
+  max-width: 56ch;
+}
+
+.clientCard:hover {
+  transform: none;
+}
+
+/* 11. Quem somos: card horizontal, foto 92 → 148px.
+   ⚠️ REVERSÍVEL. Com o Rodrigo de volta ao teamMembers, restaure a grade
+   original: .teamGrid { display:grid; grid-template-columns:
+   repeat(auto-fit, minmax(min(320px,100%),560px)); justify-content:start;
+   gap:22px } e .teamPhoto/.teamAvatar { width:92px; height:92px }. */
+.teamGrid {
+  display: block;
+}
+
+.teamCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  align-items: flex-start;
+  padding: 32px 34px;
+}
+
+.teamPhoto,
+.teamAvatar {
+  width: 148px;
+  height: 148px;
+}
+
+.teamMeta {
+  flex: 1 1 340px;
+  min-width: 0;
+}
+
+.teamCred {
+  max-width: 68ch;
+}
+
+.teamCard:hover {
+  transform: none;
+}
+
+/* 12. Contato: uma ficha só (e-mail duplicado removido no TSX). */
+.contactMeta {
+  margin-top: 0;
+  display: grid;
+  gap: 14px;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+}
+
+.contactMeta .row + .row {
+  padding-top: 14px;
+  border-top: 1px solid #eef2f7;
+}
+
+.contactMeta .row span,
+.contactMeta .row a {
+  word-break: break-word;
+}
+
+.contactMeta .row a:hover {
+  color: var(--primary);
+}
+
+/* 13. Medidas de texto unificadas: 68ch para blocos largos, 56ch p/ leitura. */
+.sectionHeader {
+  max-width: 68ch;
+}
+
+.teamIntro {
+  max-width: 68ch;
+}
+
+.heroText p {
+  max-width: 56ch;
+}
+
+/* Responsivo: abaixo de 860px o painel do carrossel já vira coluna única;
+   a altura mínima da coluna de texto passaria a criar vão morto. */
+@media (max-width: 860px) {
+  .carouselInfo {
+    min-height: 0;
+  }
+}
