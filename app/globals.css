@@ -415,6 +415,8 @@ section[id] {
   letter-spacing: -0.015em;
   line-height: 1.12;
   margin: 0 0 12px;
+  /* Equilibra as linhas do título e evita palavra órfã (ex.: "lê" sozinho). */
+  text-wrap: balance;
 }
 
 .sectionHeader p {
@@ -422,6 +424,8 @@ section[id] {
   color: var(--text-soft);
   margin: 0;
   line-height: 1.65;
+  /* Evita que a última linha do subtítulo fique com uma palavra solta. */
+  text-wrap: pretty;
 }
 
 .sectionHeader.onDark h2 {

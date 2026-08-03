@@ -147,9 +147,9 @@ export const featuredService: Service = {
 
 export const digitalContent = {
   eyebrow: 'Conteúdo digital interativo',
-  title: 'Aplicações que o aluno manipula, não apenas lê',
+  title: 'Aplicações com que o aluno interage, não apenas lê',
   subtitle:
-    'Quando o conceito pede movimento, tentativa e erro, o material precisa deixar de ser página e virar ferramenta. Estas são as aplicações que projetamos e desenvolvemos — todas rodam no navegador, sem instalação e sem login.',
+    'Quando o conceito pede movimento, tentativa e erro, o material precisa deixar de ser página e virar ferramenta. Nós projetamos e desenvolvemos essas aplicações — todas rodam no navegador, sem instalação e sem login.',
   note: 'Cada aplicação nasceu de uma necessidade real de sala de aula. Podemos desenvolver a sua também.',
 };
 
